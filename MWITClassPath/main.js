@@ -1,6 +1,7 @@
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import { setupCounter } from './counter.js'
+import { setupButton } from './page1.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -14,6 +15,9 @@ document.querySelector('#app').innerHTML = `
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
+    <div class="card">
+      <button id="url" type="button"></button>
+    </div>
     <p class="read-the-docs">
       Click on the Vite logo to learn more
     </p>
@@ -21,3 +25,8 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter'))
+
+const url = 'https://www.youtube.com/'
+const button = document.querySelector('#url')
+setupButton(button, url)
+

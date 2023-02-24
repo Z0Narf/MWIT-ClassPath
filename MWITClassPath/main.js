@@ -17,7 +17,9 @@ document.querySelector('#app').innerHTML = `
       <button id="url" type="button">Go to page1</button>
     </div>
     <div class="card">
-      <button id="url1" type="button1">Go to page2</button>
+      <button id="url1" type="button">
+        <img src="D:\_Website Creator\MWIT ClassPath\MWITClassPath\picture\Rickroll.jpg" alt="actually picture is not load TT" />
+      </button>
     </div>
     <div class="card">
       <button id="url2" type="button2">Go to page3</button>

@@ -1,87 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import './style.css'
+import javascriptLogo from './javascript.svg'
+import { setupButton } from './pagelink.js'
+import { showTime } from './clock.js'
 
-import './style.css';
-import javascriptLogo from './javascript.svg';
 
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-      <div className="card">
-        <button id="counter" type="button"></button>
-      </div>
-      <div className="card">
-        <Link to="/page1">Go to page 1</Link>
-      </div>
+document.querySelector('#app').innerHTML = `
+  <div>
+    <a href="https://vitejs.dev" target="_blank">
+      <img src="/vite.svg" class="logo" alt="Vite logo" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
+    </a>
+    <h1 id="clock"></h1>
+    <div class="card">
+      <button id="url" type="button">Go to page1</button>
     </div>
-  );
-}
-
-function Page1() {
-  const url = 'https://youtu.be/62_osPKmIIg';
-
-  return (
-    <div>
-      <h2>Page 1</h2>
-      <div className="card">
-        <button id="url" type="button" onClick={() => window.location.href = url}>Go to YouTube</button>
-      </div>
-      <div className="card">
-        <Link to="/page2">Go to page 2</Link>
-      </div>
+    <div class="card">
+      <button id="url1" type="button1">Go to page2</button>
     </div>
-  );
-}
-
-function Page2() {
-  const url = 'https://www.example.com/';
-
-  return (
-    <div>
-      <h2>Page 2</h2>
-      <div className="card">
-        <button id="url" type="button" onClick={() => window.location.href = url}>Go to Example</button>
-      </div>
+    <div class="card">
+      <button id="url2" type="button2">Go to page3</button>
     </div>
-  );
-}
+    <p class="read-the-docs">
+      This is the MWITClassPath
+    </p>
+  </div>
+`
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/page1">Page 1</Link>
-            </li>
-            <li>
-              <Link to="/page2">Page 2</Link>
-            </li>
-          </ul>
-        </nav>
+const url = 'https://youtu.be/62_osPKmIIg'
+const button = document.querySelector('#url')
+setupButton(button, url)
 
-        <Switch>
-          <Route path="/page1">
-            <Page1 />
-          </Route>
-          <Route path="/page2">
-            <Page2 />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-}
+const url1 = 'https://www.example.com/'
+const button1 = document.querySelector('#url1')
+setupButton(button1, url1)
 
-ReactDOM.render(<App />, document.querySelector('#app'));
+const url2 = 'https://www.example2.com/'
+const button2 = document.querySelector('#url2')
+setupButton(button2, url2)
 
-
+showTime();

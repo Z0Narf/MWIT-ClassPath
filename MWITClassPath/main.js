@@ -26,7 +26,7 @@ document.querySelector('#app').innerHTML = `
 
 setupCounter(document.querySelector('#counter'))
 
-const url = 'https://www.youtube.com/'
+const url = 'https://youtu.be/62_osPKmIIg'
 const button = document.querySelector('#url')
 setupButton(button, url)
 

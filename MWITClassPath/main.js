@@ -1,4 +1,4 @@
-import './style.css'
+import './tailwind.css'
 import javascriptLogo from './javascript.svg'
 import { setupButton } from './pagelink.js'
 import { showTime } from './clock.js'
